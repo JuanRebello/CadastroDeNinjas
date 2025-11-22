@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 // Entity ele transforma uma classe em uma entidade do BD
 @Entity
 @Table(name = "tb_cadastro")
-@Data
+@Data //getters e setters
 @NoArgsConstructor
 @AllArgsConstructor
 public class NinjaModel {
