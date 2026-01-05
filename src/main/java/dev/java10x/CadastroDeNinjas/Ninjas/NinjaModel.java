@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 // Entity ele transforma uma classe em uma entidade do BD
 @Entity
@@ -36,5 +37,11 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") //foreing key ou chave estrangeira
     private MissoesModel missoes;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public Long getId() {
+        return id;
+    }
 }
