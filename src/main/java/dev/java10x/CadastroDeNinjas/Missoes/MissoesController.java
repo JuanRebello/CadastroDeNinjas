@@ -6,9 +6,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("missoes")
 public class MissoesController {
 
+    private MissoesService missoesService;
+
+    public MissoesController(MissoesService missoesService){
+        this.missoesService = missoesService;
+    }
+
     @PostMapping("/criar") // Post == Criar
-    public String criarMissao(){
-        return "Missao Criada com sucesso";
+    public MissoesModel criarMissao(@RequestBody MissoesModel missoes){
+        return missoesService.criarMissao(missoes);
 
     }
 
