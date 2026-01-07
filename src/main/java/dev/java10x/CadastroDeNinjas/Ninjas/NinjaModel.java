@@ -2,10 +2,7 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import dev.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 // Entity ele transforma uma classe em uma entidade do BD
 @Entity
@@ -32,16 +29,13 @@ public class NinjaModel {
     @Column (name = "idade")
     private int idade ;
 
+    @Column(name = "rank")
+    private String rank;
+
     //@ManyToOne um ninja tem 1 unica missao
     @ManyToOne
     @JoinColumn(name = "missoes_id") //foreing key ou chave estrangeira
     private MissoesModel missoes;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public Long getId() {
-        return id;
-    }
 }
